@@ -1879,6 +1879,9 @@ util.initChartOption = function (chartObj, xField, yField, yFieldType, scatterYF
               width: chartObj.gauge.axisLineWidth
             }
           },
+          splitLine: {
+            length: chartObj.gauge.axisLineWidth
+          },
           axisLabel: {
             show: chartObj.gauge.showAxisLabel,
             distance: chartObj.gauge.axisLabelDistance
