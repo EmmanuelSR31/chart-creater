@@ -161,16 +161,19 @@ export default {
       this.dashObj.charts.push(JSON.parse(JSON.stringify(this.chart)))
       this.$nextTick(() => {
         this.dashObj.charts[this.dashObj.charts.length - 1].chartObj.title = '未命名图表' + Math.random()
+        this.dashObj.charts[this.dashObj.charts.length - 1].chartObj.visualMaps = []
+        this.dashObj.charts[this.dashObj.charts.length - 1].chartObj.markLine = {}
         this.dashObj.charts[this.dashObj.charts.length - 1].left = 0
         this.dashObj.charts[this.dashObj.charts.length - 1].top = 0
         this.dashObj.charts[this.dashObj.charts.length - 1].width = 100
         this.dashObj.charts[this.dashObj.charts.length - 1].height = 100
       })
+      let obj = this.dashObj.charts[this.dashObj.charts.length - 1]
       console.log(this.dashObj.charts)
       this.$nextTick(() => {
         let temp = echarts.init(document.getElementById('chart' + (this.dashObj.charts.length - 1)))
         this.chartDiv.push(temp)
-        this.chartOption[this.chartOption.length] = Util.initChartOption(this.chart.chartObj, this.chart.x_field, this.chart.y_field, this.chart.y_field_type, this.chart.scatter_y_field, this.chart.secondary_y_field, this.chart.secondary_y_field_type, this.chart.currentColorTheme, this.chart.radarMax, this.xData, this.yData, this.SYData)
+        this.chartOption[this.chartOption.length] = Util.initChartOption(obj.chartObj, obj.x_field, obj.y_field, obj.y_field_type, obj.scatter_y_field, obj.secondary_y_field, obj.secondary_y_field_type, obj.currentColorTheme, obj.radarMax, this.xData, this.yData, this.SYData)
         temp.setOption(this.chartOption[this.chartOption.length - 1])
         // console.log(this.chartDiv)
         // console.log(this.chartOption)

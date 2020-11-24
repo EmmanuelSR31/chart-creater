@@ -1287,7 +1287,7 @@ export default {
           this.formList = r.data.rows
         }
       }) */
-      this.fields = [{ title: '日期' }, { title: '销售额' }, { title: '产量' }]
+      this.fields = [{ title: '日期' }, { title: '用户' }, { title: '销售额' }, { title: '产量' }, { title: '流量' }]
       this.currentColorTheme = this.chartColorTheme[0]
     },
     /**
